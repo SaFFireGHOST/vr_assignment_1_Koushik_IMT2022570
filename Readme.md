@@ -15,6 +15,24 @@ This project consists of two parts:
 
 ## Part 1: Coin Detection, Segmentation, and Counting
 
+This section detects, segments, and counts Indian coins in an image.  
+
+### **Steps Involved**  
+1. **Edge Detection (Contours Method)**  
+   - Converts the image to grayscale.  
+   - Applies Gaussian Blur and Canny edge detection.  
+   - Finds contours to detect coin boundaries.  
+   - Outlines detected coins in green.  
+
+2. **Segmentation**  
+   - Converts the image to grayscale and applies Gaussian Blur.  
+   - Uses Otsu's thresholding to generate a binary mask.  
+   - Applies morphological operations to clean noise.  
+   - Detects and labels connected components for segmentation.  
+
+3. **Counting Coins**  
+   - The total number of detected coins is displayed in the terminal.  
+
 ### Requirements  
 Install the required dependencies using:  
 ```bash
@@ -49,6 +67,19 @@ python 1.py
 ---
 
 ## Part 2: Image Stitching
+
+This section stitches overlapping images into a single panorama.  
+
+### **Steps Involved**  
+1. **Feature Detection & Matching**  
+   - Uses **SIFT (Scale-Invariant Feature Transform)** to extract keypoints.  
+   - Matches keypoints using **Brute-Force Matcher (BFMatcher)**.  
+   - Filters and sorts matches based on distances.  
+
+2. **Homography & Warping**  
+   - Computes the homography matrix using **RANSAC**.  
+   - Warps one image onto another to align them.  
+   - Creates a seamless panorama. 
 
 ### Requirements  
 Install dependencies:  
@@ -100,4 +131,17 @@ vr_assignment1_Koushik_IMT2022570/
 │── 2.py  (Panorama Stitching)
 │── README.md
 ```
+
+
+## **Results & Observations**  
+
+### **Coin Detection & Segmentation**  
+- Successfully detects **coin edges** using Canny edge detection and contour detection.  
+- Effectively **segments individual coins** using thresholding and morphological operations.  
+- **4 coin segments** were detected and displayed in the terminal output.  
+
+### **Image Stitching**  
+- **SIFT keypoints** are accurately detected in both input images.  
+- **Feature matching** using BFMatcher successfully finds corresponding keypoints.  
+- The final **panorama seamlessly combines two images** using homography and RANSAC.  
 

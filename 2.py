@@ -1,5 +1,10 @@
 import cv2
 import numpy as np
+import os
+
+# Create output directory if it doesn't exist
+output_dir = "./output_images"
+os.makedirs(output_dir, exist_ok=True)
 
 # Detect keypoints and match features using SIFT and BFMatcher
 def detect_and_match_keypoints(img1, img2):
@@ -62,8 +67,8 @@ img2_keypoints = cv2.drawKeypoints(img2, keypoints2, None, flags=cv2.DRAW_MATCHE
 # Show keypoints
 cv2.imshow("Keypoints Image 1", img1_keypoints)
 cv2.imshow("Keypoints Image 2", img2_keypoints)
-cv2.imwrite("keypoints_1.jpg", img1_keypoints)
-cv2.imwrite("keypoints_2.jpg", img2_keypoints)
+cv2.imwrite("./output_images/keypoints_1.jpg", img1_keypoints)
+cv2.imwrite("./output_images/keypoints_2.jpg", img2_keypoints)
 
 # Stitch images
 panorama = stitch_images(img1, img2)

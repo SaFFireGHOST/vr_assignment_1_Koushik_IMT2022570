@@ -35,7 +35,7 @@ python 1.py
 ### Example Inputs & Outputs  
 
 #### Input Image:
-![Input Coins](input_images/3.jpg)
+![Input Coins](input_images/coins.jpg)
 
 #### Canny Edge Detection Output:
 ![Canny Edges](output_images/canny_edges.jpg)
@@ -70,8 +70,8 @@ python 2.py
 ### Example Inputs & Outputs  
 
 #### Input Images:
-![Input 1](input_images/temp_1.jpg)
-![Input 2](input_images/temp_2.jpg)
+![Input 1](input_images/overlap_image_1.jpg)
+![Input 2](input_images/overlap_image_2.jpg)
 
 #### Keypoints Detected:
 ![Keypoints 1](output_images/keypoints_1.jpg)
@@ -84,11 +84,11 @@ python 2.py
 
 ## Folder Structure  
 ```
-vr_assignment1_[Koushik]_[IMT2022570]/
+vr_assignment1_Koushik_IMT2022570/
 │── input_images/
-│   ├── 3.jpg (coins image)
-│   ├── temp_1.jpg
-│   ├── temp_2.jpg
+│   ├── coins.jpg
+│   ├── overlap_image_1.jpg
+│   ├── overlap_image_2.jpg
 │── output_images/
 │   ├── canny_edges.jpg
 │   ├── contours_detected.jpg
